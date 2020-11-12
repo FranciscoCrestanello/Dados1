@@ -151,7 +151,6 @@ int main(){
                                         TotalLanzamientos1++;
                                         LanzamientosPorRonda1++;
                                         maximo=PuntajeTotal(dados,puntos,tam,i);
-                                        NombrePuntaje(maximo);
 
                                         if(maximo==0){
                                             tiradaFallida1++;
@@ -163,6 +162,25 @@ int main(){
                                         tirosRealizados1++;
                                         TotalRonda1+=maximo;
                                         TotalPartida1+=maximo;
+
+//////////////////////EMPIEZA: INTERFAZ DURANTE EL TURNO DEL JUGADOR////////////////////////////
+
+    cout << "TURNO DE: " << nombre1 << " | " << "RONDA NUMERO: " << i << " | " << "PUNTAJE ACUMULADO: " << TotalPartida1 << endl;
+    cout << "-----------------------------------------------------------" << endl;
+    cout << "VECES QUE OBTUVO BUNCO: " << Buncos1 << endl;
+    cout << "-----------------------------------------------------------" <<endl;
+    cout << "LANZAMIENTO NUMERO: " << LanzamientosPorRonda1 << endl;
+    cout << "-----------------------------------------------------------" << endl << endl;
+
+        cout << dados[0] << " " << dados[1] << " " << dados[2] << "    ";
+        ///mostrarVector(dados);
+        cout<< "PUNTAJE OBTENIDO: ";
+        NombrePuntaje(maximo);
+        cout<< "PUNTAJE DE LA RONDA: "<<TotalRonda1<<endl;
+
+            system("pause");
+            system("cls");
+////////////////////////////TERMINA: INTERFAZ DURANTE EL TURNO DEL JUGADOR///////////////////////////
 
                                     }
                                             cout << "RONDA NUMERO: " << i << endl;
@@ -202,6 +220,25 @@ int main(){
                                             TotalRonda2+=maximo;
                                             TotalPartida2+=maximo;
 
+//////////////////////EMPIEZA: INTERFAZ DURANTE EL TURNO DEL JUGADOR////////////////////////////
+
+    cout << "TURNO DE: " << nombre2 << " | " << "RONDA NUMERO: " << i << " | " << "PUNTAJE ACUMULADO: " << TotalPartida2 << endl;
+    cout << "-----------------------------------------------------------" << endl;
+    cout << "VECES QUE OBTUVO BUNCO: " << Buncos2 << endl;
+    cout << "-----------------------------------------------------------" <<endl;
+    cout << "LANZAMIENTO NUMERO: " << LanzamientosPorRonda2 << endl;
+    cout << "-----------------------------------------------------------" << endl << endl;
+
+        cout << dados[0] << " " << dados[1] << " " << dados[2] << "    ";
+        ///mostrarVector(dados);
+        cout<< "PUNTAJE OBTENIDO: ";
+        NombrePuntaje(maximo);
+        cout<< "PUNTAJE DE LA RONDA: "<<TotalRonda2<<endl;
+
+            system("pause");
+            system("cls");
+////////////////////////////TERMINA: INTERFAZ DURANTE EL TURNO DEL JUGADOR///////////////////////////
+
                                         }
                                             cout << "RONDA NUMERO: " << i << endl;
                                             cout << "PROXIMO TURNO: " << nombre1<< endl;
@@ -213,15 +250,13 @@ int main(){
                                             cout << "CANTIDAD DE BUNCOS: "<< Buncos1 <<endl;
                                             system("pause");
                                             system("cls");
-                                    //}
-                                //}
+
                                 control=true;
                             }
 
                                 system("pause");
                                 system("cls");
-                            //}
-                            //IF(TOTALRONDA>=21 || TOTALRONDA2>=21){RONDA++}
+
                     }
 
                     break;
@@ -241,86 +276,3 @@ int main(){
 
     return 0;
 }
-/*
-                    for(i=0;i<6;i++){
-                        RONDA=1;
-                        LanzamientosPorRonda1=0;
-                        TotalRonda1=0;
-                        LanzamientosPorRonda2=0;
-                        TotalRonda2=0;
-                            while(TotalRonda1<21&&TotalRonda2<21){
-                               /// cout<<"RONDA: "<<RONDA<<endl;
-                                if(i%2==0){ //jugador 1
-                                    while(TotalRonda1<21&&control==true){
-
-                                        cargarAleatorio(dados,tam);
-                                        TotalLanzamientos1++;
-                                        LanzamientosPorRonda1++;
-                                        maximo=PuntajeTotal(dados,puntos,tam,RONDA);
-
-                                        if(maximo==0){
-                                            tiradaFallida1++;
-                                            control=false;
-                                        }
-                                        if(maximo==21){
-                                            Buncos1++;
-                                        }
-                                        tirosRealizados1++;
-                                        TotalRonda1+=maximo;
-                                        TotalPartida1+=maximo;
-
-                                    }
-                                            cout << "RONDA NUMERO: " << RONDA << endl;
-                                            cout << "PROXIMO TURNO: " << nombre2<< endl;
-                                            cout << "---------------------------------------" << endl;
-                                            cout << "PUNTAJE " << nombre1 <<": "<< TotalPartida1 << " PUNTOS" << endl;
-                                            cout << "CANTIDAD DE BUNCOS: "<< Buncos1 <<endl;
-                                            cout << "---------------------------------------" << endl;
-                                            cout << "PUNTAJE "<<nombre2<<": " << TotalPartida2 << " PUNTOS" << endl;
-                                            cout << "CANTIDAD DE BUNCOS: "<< Buncos2 <<endl;
-                                            system("pause");
-                                            system("cls");
-
-                                }
-                                //else{
-                                    control=true;
-                                    if(i%2!=0){ // jugador 2
-                                        ///cout<<"RONDA: "<<RONDA<<endl;
-                                        while(TotalRonda2<21&&control==true){
-
-                                            cargarAleatorio(dados,tam);
-                                            TotalLanzamientos2++;
-                                            LanzamientosPorRonda2++;
-                                            maximo=PuntajeTotal(dados,puntos,tam,RONDA);
-
-                                            if(maximo==0){
-                                                tiradaFallida2++;
-                                                control=false;
-                                            }
-                                            if(maximo==21){
-                                                Buncos2++;
-                                            }
-                                            tirosRealizados2++;
-                                            TotalRonda2+=maximo;
-                                            TotalPartida2+=maximo;
-
-                                        }
-                                            cout << "RONDA NUMERO: " << RONDA << endl;
-                                            cout << "PROXIMO TURNO: " << nombre1<< endl;
-                                            cout << "---------------------------------------" << endl;
-                                            cout << "PUNTAJE " << nombre2 <<": "<< TotalPartida2 << " PUNTOS" << endl;
-                                            cout << "CANTIDAD DE BUNCOS: "<< Buncos2 <<endl;
-                                            cout << "---------------------------------------" << endl;
-                                            cout << "PUNTAJE "<<nombre1<<": " << TotalPartida1 << " PUNTOS" << endl;
-                                            cout << "CANTIDAD DE BUNCOS: "<< Buncos1 <<endl;
-                                            system("pause");
-                                            system("cls");
-                                    }
-                                //}
-                                control=true;
-                            }
-                            RONDA++;
-
-                                system("pause");
-                                system("cls");
-*/

@@ -113,7 +113,7 @@ int puntaje2(int v[], int tam){
 }
 int puntaje1(int v[], int tam, int ronda){
     int puntos=0,i;
-        for(i=0;i<=tam;i++){
+        for(i=0;i<tam;i++){
             if(v[i]==ronda){
                 puntos++;
             }
