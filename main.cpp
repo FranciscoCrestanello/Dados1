@@ -18,17 +18,16 @@ int main(){
     char nombre1[10],nombre2[10];
 
 
-                    int RONDA;
-                    ///////////JUGADOR 1//////////////
-                    int TotalLanzamientos1,tirosRealizados1,tiradaFallida1,Buncos1,TotalPartida1;
-                    int LanzamientosPorRonda1,TotalRonda1;
-                    //int maximo;
-                    bool control=true;
-                    ///////////JUGADOR 1//////////////
-                    ///////////JUGADOR 2//////////////
-                    int TotalLanzamientos2,tirosRealizados2,tiradaFallida2,Buncos2,TotalPartida2;
-                    int LanzamientosPorRonda2,TotalRonda2;
-                    ///////////JUGADOR 2//////////////
+    ///////////JUGADOR 1//////////////
+    int TotalLanzamientos1,tirosRealizados1,tiradaFallida1,Buncos1,TotalPartida1;
+    int LanzamientosPorRonda1,TotalRonda1;
+
+    bool control=true;
+    ///////////JUGADOR 1//////////////
+    ///////////JUGADOR 2//////////////
+    int TotalLanzamientos2,tirosRealizados2,tiradaFallida2,Buncos2,TotalPartida2;
+    int LanzamientosPorRonda2,TotalRonda2;
+    ///////////JUGADOR 2//////////////
 
 
 
@@ -134,13 +133,122 @@ int main(){
                     Buncos2=0;
                     TotalPartida2=0;
 
-                    for(i=0;i<12;i++){
+                    for(i=1;i<=6;i++){
+                        LanzamientosPorRonda1=0;
+                        TotalRonda1=0;
+                        LanzamientosPorRonda2=0;
+                        TotalRonda2=0;
+                            while(TotalRonda1<21&&TotalRonda2<21){ //jugador 1
+
+                                    while(TotalRonda1<21&&control==true){
+
+                                    for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
+                                    cout<<"INGRESE EL DADO N_"<<x+1<<":";       // ->PARA PROBAR SI FUNCIONA EL PROGRAMA
+                                    cin>>dados[x];
+                                    }
+
+                                        //cargarAleatorio(dados,tam);
+                                        TotalLanzamientos1++;
+                                        LanzamientosPorRonda1++;
+                                        maximo=PuntajeTotal(dados,puntos,tam,i);
+                                        NombrePuntaje(maximo);
+
+                                        if(maximo==0){
+                                            tiradaFallida1++;
+                                            control=false;
+                                        }
+                                        if(maximo==21){
+                                            Buncos1++;
+                                        }
+                                        tirosRealizados1++;
+                                        TotalRonda1+=maximo;
+                                        TotalPartida1+=maximo;
+
+                                    }
+                                            cout << "RONDA NUMERO: " << i << endl;
+                                            cout << "PROXIMO TURNO: " << nombre2<< endl;
+                                            cout << "---------------------------------------" << endl;
+                                            cout << "PUNTAJE " << nombre1 <<": "<< TotalPartida1 << " PUNTOS" << endl;
+                                            cout << "CANTIDAD DE BUNCOS: "<< Buncos1 <<endl;
+                                            cout << "---------------------------------------" << endl;
+                                            cout << "PUNTAJE "<<nombre2<<": " << TotalPartida2 << " PUNTOS" << endl;
+                                            cout << "CANTIDAD DE BUNCOS: "<< Buncos2 <<endl;
+                                            system("pause");
+                                            system("cls");
+
+                                    control=true;
+
+                                        while(TotalRonda2<21&&control==true){ // jugador 2
+
+                                        for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
+                                        cout<<"INGRESE EL DADO N_"<<x+1<<":";       // ->PARA PROBAR SI FUNCIONA EL PROGRAMA
+                                        cin>>dados[x];
+                                        }
+
+                                            //cargarAleatorio(dados,tam);
+                                            TotalLanzamientos2++;
+                                            LanzamientosPorRonda2++;
+                                            maximo=PuntajeTotal(dados,puntos,tam,i);
+                                            NombrePuntaje(maximo);
+
+                                            if(maximo==0){
+                                                tiradaFallida2++;
+                                                control=false;
+                                            }
+                                            if(maximo==21){
+                                                Buncos2++;
+                                            }
+                                            tirosRealizados2++;
+                                            TotalRonda2+=maximo;
+                                            TotalPartida2+=maximo;
+
+                                        }
+                                            cout << "RONDA NUMERO: " << i << endl;
+                                            cout << "PROXIMO TURNO: " << nombre1<< endl;
+                                            cout << "---------------------------------------" << endl;
+                                            cout << "PUNTAJE " << nombre2 <<": "<< TotalPartida2 << " PUNTOS" << endl;
+                                            cout << "CANTIDAD DE BUNCOS: "<< Buncos2 <<endl;
+                                            cout << "---------------------------------------" << endl;
+                                            cout << "PUNTAJE "<<nombre1<<": " << TotalPartida1 << " PUNTOS" << endl;
+                                            cout << "CANTIDAD DE BUNCOS: "<< Buncos1 <<endl;
+                                            system("pause");
+                                            system("cls");
+                                    //}
+                                //}
+                                control=true;
+                            }
+
+                                system("pause");
+                                system("cls");
+                            //}
+                            //IF(TOTALRONDA>=21 || TOTALRONDA2>=21){RONDA++}
+                    }
+
+                    break;
+
+            case 0: cout << "FIN DEL JUEGO" <<endl;
+                    return 0;
+                    break;
+
+            default:cout<<"ERROR DE NUMERO. INTENTE DE NUEVO."<<endl;
+                    system("pause");
+                    system("cls");
+                    break;
+        }
+
+
+    }
+
+    return 0;
+}
+/*
+                    for(i=0;i<6;i++){
                         RONDA=1;
                         LanzamientosPorRonda1=0;
                         TotalRonda1=0;
                         LanzamientosPorRonda2=0;
                         TotalRonda2=0;
-                            while(TotalRonda1<21||TotalRonda2<21){
+                            while(TotalRonda1<21&&TotalRonda2<21){
                                /// cout<<"RONDA: "<<RONDA<<endl;
                                 if(i%2==0){ //jugador 1
                                     while(TotalRonda1<21&&control==true){
@@ -174,7 +282,7 @@ int main(){
                                             system("cls");
 
                                 }
-                                else{
+                                //else{
                                     control=true;
                                     if(i%2!=0){ // jugador 2
                                         ///cout<<"RONDA: "<<RONDA<<endl;
@@ -208,31 +316,11 @@ int main(){
                                             system("pause");
                                             system("cls");
                                     }
-                                }
+                                //}
                                 control=true;
                             }
                             RONDA++;
 
                                 system("pause");
                                 system("cls");
-                            //}
-                            //IF(TOTALRONDA>=21 || TOTALRONDA2>=21){RONDA++}
-                    }
-
-                    break;
-
-            case 0: cout << "FIN DEL JUEGO" <<endl;
-                    return 0;
-                    break;
-
-            default:cout<<"ERROR DE NUMERO. INTENTE DE NUEVO."<<endl;
-                    system("pause");
-                    system("cls");
-                    break;
-        }
-
-
-    }
-
-    return 0;
-}
+*/

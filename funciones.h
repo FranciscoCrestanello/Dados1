@@ -9,6 +9,8 @@ void mostrarVector (int v[], int tam);          // MUESTRA EL VECTOR
 
 void ordenarVector(int v[], int tam );          // ORDENA EL VECTOR
 
+int PuntajeTotal(int dados[], int puntos[], int tam, int ronda); // OBTIENE EL PUNTAJE TOTAL
+
 int puntaje21(int v[], int ronda);              // PUNTAJE 21
 
 int puntaje5(int v[], int ronda);               // PUNTAJE 5
@@ -22,6 +24,7 @@ int puntaje1(int v[], int tam, int ronda);      // PUNTAJE 1
 int BuscarMasGrande(int puntos[]);              // BUSCA EL VALOR MAXIMO DE LOS VECTORES PARA ANOTAR EL PUNTO CORRESPONDIENTE
 
 int NombrePuntaje(int entero);                  // NOMBRA EL PUNTAJE EN LA INTERFAZ DE LOS JUGADORES
+
 
 /////////////////////////DEFINICION DE LAS FUNCIONES////////////////////////////////////////
 
@@ -166,8 +169,6 @@ int PuntajeTotal(int dados[], int puntos[], int tam, int ronda){
     puntos[3]=puntaje2(dados,tam);
     puntos[4]=puntaje1(dados,tam,ronda);
     maximo=BuscarMasGrande(puntos);
-
-
 
     return maximo;
 }
