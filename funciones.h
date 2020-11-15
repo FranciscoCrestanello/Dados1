@@ -174,6 +174,8 @@ int PuntajeTotal(int dados[], int puntos[], int tam, int ronda){
 }
 
 
+
+
 ///////////////////PUNTAJES////////////////////////////////////////////////////////////
 
 #endif // FUNCIONES_H_INCLUDED
