@@ -9,6 +9,8 @@ void mostrarVector (int v[], int tam);          // MUESTRA EL VECTOR
 
 void ordenarVector(int v[], int tam );          // ORDENA EL VECTOR
 
+void ponerEnCero (int *a,int *b,int *c,int *d,int *e); // PONE EN 0 VARIABLES
+
 int PuntajeTotal(int dados[], int puntos[], int tam, int ronda); // OBTIENE EL PUNTAJE TOTAL
 
 int puntaje21(int v[], int ronda);              // PUNTAJE 21
@@ -56,6 +58,9 @@ void ordenarVector(int v[], int tam ){
     }
 }
 
+void ponerEnCero (int *a,int *b,int *c,int *d,int *e){
+    *a=*b=*c=*d=*e=0;
+}
 
 /////////////////////////FUNCIONES DE ENTADA////////////////////////////////////////////////
 
