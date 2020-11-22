@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1606088902 source:c:\users\crest\desktop\trabajo final laboratorio\juego_de_dados-bunco\main.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<ctime>
+	"funciones.h"
+	"rlutil.h"
+
+1606088568 c:\users\crest\desktop\trabajo final laboratorio\juego_de_dados-bunco\funciones.h
+	"rlutil.h"
+
+1571584339 c:\users\crest\desktop\trabajo final laboratorio\juego_de_dados-bunco\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
