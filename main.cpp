@@ -12,18 +12,14 @@ using namespace rlutil;
 
 int main(){
     const int tam=3;
-    int opcion,i,j;
+    int opcion=-1,i,x;
     int dados[3],puntos[5],maximo;
-    int tiradaFallida;
-    int TotalPartida, TotalRonda,PuntajeDelJugador;
+    int tiradaFallida,TotalPartida,TotalRonda,PuntajeDelJugador;
     int Buncos,tirosRealizados,TotalLanzamientos,LanzamientosPorRonda;
     char nombre1[10],nombre2[10];
-
-    int TotalLanzamientos1,tirosRealizados1,tiradaFallida1,Buncos1,TotalPartida1;
-    int LanzamientosPorRonda1,TotalRonda1;
-    bool control=true;
-    int TotalLanzamientos2,tirosRealizados2,tiradaFallida2,Buncos2,TotalPartida2;
-    int LanzamientosPorRonda2,TotalRonda2;
+    int TotalLanzamientos1,tirosRealizados1,tiradaFallida1,Buncos1,TotalPartida1,LanzamientosPorRonda1,TotalRonda1;
+    int TotalLanzamientos2,tirosRealizados2,tiradaFallida2,Buncos2,TotalPartida2,LanzamientosPorRonda2,TotalRonda2;
+    bool control=true,control2=true;
 
     while(opcion!=0){
         opcion=EjecutarMenu(opcion);
@@ -49,7 +45,7 @@ int main(){
                                         TotalRonda+=maximo;
                                         TotalPartida+=maximo;
 
-        ///EMPIEZA: INTERFAZ DURANTE EL TURNO DEL JUGADOR///
+        //////EMPIEZA: INTERFAZ DURANTE EL TURNO DEL JUGADOR///
             MostrarBordesTurnoJug();
             MostrarNombre1Jug(nombre1);
             InterfazTurno1Jug(i,TotalPartida,Buncos,LanzamientosPorRonda,dados,maximo,TotalRonda);
@@ -69,27 +65,28 @@ int main(){
                                 break;
 //////////////////////////////////TERMINA: INTERFAZ DE LA PARTIDA////////////////////////////////////////////
 
-            case 2: cout<<"INGRESE EL NOMBRE DEL PRIMER JUGADOR: ";cin>>nombre1;
-                    cout<<"INGRESE EL NOMBRE DEL SEGUNDO JUGADOR: ";cin>>nombre2;
-                    system("cls");
+            case 2: IngresoNombre2Jugadores(nombre1,nombre2);
+
                     ponerEnCero(&TotalLanzamientos1,&tirosRealizados1,&tiradaFallida1,&Buncos1,&TotalPartida1);
                     ponerEnCero(&TotalLanzamientos2,&tirosRealizados2,&tiradaFallida2,&Buncos2,&TotalPartida2);
-
+                    control=true;
+                    control2=false;
                     for(i=1;i<=6;i++){
                         LanzamientosPorRonda1=0;
                         TotalRonda1=0;
                         LanzamientosPorRonda2=0;
                         TotalRonda2=0;
+
                             while(TotalRonda1<21&&TotalRonda2<21){ //jugador 1
 
                                     while(TotalRonda1<21&&control==true){
 
-                                    /*for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
+                                    for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
                                     cout<<"INGRESE EL DADO N_"<<x+1<<":";       // ->PARA PROBAR SI FUNCIONA EL PROGRAMA
                                     cin>>dados[x];
-                                    }*/
+                                    }
 
-                                        cargarAleatorio(dados,tam);
+                                        //cargarAleatorio(dados,tam);
                                         TotalLanzamientos1++;
                                         LanzamientosPorRonda1++;
                                         maximo=PuntajeTotal(dados,puntos,tam,i);
@@ -107,49 +104,29 @@ int main(){
 
 //////////////////////EMPIEZA: INTERFAZ DURANTE EL TURNO DEL PRIMER JUGADOR////////////////////////////
 
-    //mostrarNombre(nombre1);
-    //InterfazTurnoJugador(i,TotalPartida1,Buncos1,LanzamientosPorRonda1,dados,maximo,TotalRonda1);
-    cout << "TURNO DE: " << nombre1 << " | " << "RONDA NUMERO: " << i << " | " << "PUNTAJE ACUMULADO: " << TotalPartida1 << endl;
-    cout << "-----------------------------------------------------------" << endl;
-    cout << "VECES QUE OBTUVO BUNCO: " << Buncos1 << endl;
-    cout << "-----------------------------------------------------------" <<endl;
-    cout << "LANZAMIENTO NUMERO: " << LanzamientosPorRonda1 << endl;
-    cout << "-----------------------------------------------------------" << endl << endl;
+    MostrarBordesTurnoJug();
+    MostrarNombre1Jug(nombre1);
+    InterfazTurno1Jug(i,TotalPartida1,Buncos1,LanzamientosPorRonda1,dados,maximo,TotalRonda1);
 
-        cout << dados[0] << " " << dados[1] << " " << dados[2] << "    ";
-        cout<< "PUNTAJE OBTENIDO: ";
-        NombrePuntaje(maximo);
-        cout<< "PUNTAJE DE LA RONDA: "<<TotalRonda1<<endl;
-
-            anykey();
-            system("cls");
 
 ////////////////////////////TERMINA: INTERFAZ DURANTE EL TURNO DEL PRIMER JUGADOR///////////////////////////
-
+                                        control2=false;
                                     }
                         ////////////////////////EMPIEZA: INTERFAZ ENTRE RONDA Y RONDA ////////////////////////
+                                    InterfazRonda2Jug_N1(i,nombre2,nombre1,Buncos1,Buncos2,TotalPartida1,TotalPartida2);
 
-                                            cout << "RONDA NUMERO: " << i << endl;
-                                            cout << "PROXIMO TURNO: " << nombre2<< endl;
-                                            cout << "---------------------------------------" << endl;
-                                            cout << "PUNTAJE " << nombre1 <<": "<< TotalPartida1 << " PUNTOS" << endl;
-                                            cout << "CANTIDAD DE BUNCOS: "<< Buncos1 <<endl;
-                                            cout << "---------------------------------------" << endl;
-                                            cout << "PUNTAJE "<<nombre2<<": " << TotalPartida2 << " PUNTOS" << endl;
-                                            cout << "CANTIDAD DE BUNCOS: "<< Buncos2 <<endl;
-                                            anykey();
-                                            system("cls");
                         ////////////////////////TERMINA: INTERFAZ ENTRE RONDA Y RONDA ////////////////////////
                                     control=true;
+                                    if(TotalRonda1<21||control2==false){
 
                                         while(TotalRonda2<21&&control==true){ // jugador 2
 
-                                        /*for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
+                                        for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
                                         cout<<"INGRESE EL DADO N_"<<x+1<<":";       // ->PARA PROBAR SI FUNCIONA EL PROGRAMA
                                         cin>>dados[x];
-                                        }*/
+                                        }
 
-                                            cargarAleatorio(dados,tam);
+                                            //cargarAleatorio(dados,tam);
                                             TotalLanzamientos2++;
                                             LanzamientosPorRonda2++;
                                             maximo=PuntajeTotal(dados,puntos,tam,i);
@@ -168,35 +145,15 @@ int main(){
 
 //////////////////////EMPIEZA: INTERFAZ DURANTE EL TURNO DEL SEGUNDO JUGADOR////////////////////////////
 
-    //mostrarNombre(nombre2);
-    //InterfazTurnoJugador(i,TotalPartida2,Buncos2,LanzamientosPorRonda2,dados,maximo,TotalRonda2);
-    cout << "TURNO DE: " << nombre2 << " | " << "RONDA NUMERO: " << i << " | " << "PUNTAJE ACUMULADO: " << TotalPartida2 << endl;
-    cout << "-----------------------------------------------------------" << endl;
-    cout << "VECES QUE OBTUVO BUNCO: " << Buncos2 << endl;
-    cout << "-----------------------------------------------------------" <<endl;
-    cout << "LANZAMIENTO NUMERO: " << LanzamientosPorRonda2 << endl;
-    cout << "-----------------------------------------------------------" << endl << endl;
+    MostrarBordesTurnoJug();
+    MostrarNombre1Jug(nombre2);
+    InterfazTurno1Jug(i,TotalPartida2,Buncos2,LanzamientosPorRonda2,dados,maximo,TotalRonda2);
 
-        cout << dados[0] << " " << dados[1] << " " << dados[2] << "    ";
-        cout<< "PUNTAJE OBTENIDO: ";
-        NombrePuntaje(maximo);
-        cout<< "PUNTAJE DE LA RONDA: "<<TotalRonda2<<endl;
-
-            anykey();
-            system("cls");
 ////////////////////////////TERMINA: INTERFAZ DURANTE EL TURNO DEL SEGUNDO JUGADOR///////////////////////////
 
                                         }
-                                            cout << "RONDA NUMERO: " << i << endl;
-                                            cout << "PROXIMO TURNO: " << nombre1<< endl;
-                                            cout << "---------------------------------------" << endl;
-                                            cout << "PUNTAJE " << nombre2 <<": "<< TotalPartida2 << " PUNTOS" << endl;
-                                            cout << "CANTIDAD DE BUNCOS: "<< Buncos2 <<endl;
-                                            cout << "---------------------------------------" << endl;
-                                            cout << "PUNTAJE "<<nombre1<<": " << TotalPartida1 << " PUNTOS" << endl;
-                                            cout << "CANTIDAD DE BUNCOS: "<< Buncos1 <<endl;
-                                            anykey();
-                                            system("cls");
+                                    }
+                    InterfazRonda2Jug_N2(i,nombre2,nombre1,Buncos1,Buncos2,TotalPartida1,TotalPartida2);
 
                                 control=true;
                             }
@@ -263,3 +220,5 @@ int main(){
 
     return 0;
 }
+
+// CON OTRO CONTROL TRUE LO PUEDO SOLUCIONAR

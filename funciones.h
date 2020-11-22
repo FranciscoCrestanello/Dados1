@@ -118,7 +118,7 @@ void ponerEnCero (int *a,int *b,int *c,int *d,int *e){
 /////////////////////////FUNCIONES DE ENTADA////////////////////////////////////////////////
 
 
-/////////////////////////SIMPLIFICACION DEL MODO 1 JUGADOR//////////////////////////////////
+/////////////////////////SIMPLIFICACION DEL MODO 1 Y 2 JUGADORES//////////////////////////////////
 
 void MostrarBordesTurnoJug(){
         int j;
@@ -208,8 +208,44 @@ void InterfazFinPartida1Jug(char nombre1[],int Buncos,int tiradaFallida,int tiro
 
 }
 
+void IngresoNombre2Jugadores(char nombre1[], char nombre2[]){
+    locate(38,13);printf("%c",201);locate(38,16);printf("%c",200);
+    locate(90,13);printf("%c",187);locate(90,16);printf("%c",188);
+    locate(40,14);cout<<"INGRESE EL NOMBRE DEL PRIMER JUGADOR: ";cin>>nombre1;
+    locate(40,15);cout<<"INGRESE EL NOMBRE DEL SEGUNDO JUGADOR: ";cin>>nombre2;
+        system("cls");
+}
 
-/////////////////////////SIMPLIFICACION DEL MODO 1 JUGADOR//////////////////////////////////
+void InterfazRonda2Jug_N1(int i, char nombre2[],char nombre1[], int Buncos1, int Buncos2, int TotalPartida1, int TotalPartida2){
+
+        cout << "RONDA NUMERO: " << i << endl;
+        cout << "PROXIMO TURNO: " << nombre2 << endl;
+        cout << "---------------------------------------" << endl;
+        cout << "PUNTAJE " << nombre1 <<": "<< TotalPartida1 << " PUNTOS" << endl;
+        cout << "CANTIDAD DE BUNCOS: "<< Buncos1 <<endl;
+        cout << "---------------------------------------" << endl;
+        cout << "PUNTAJE "<<nombre2<<": " << TotalPartida2 << " PUNTOS" << endl;
+        cout << "CANTIDAD DE BUNCOS: "<< Buncos2 <<endl;
+            anykey();
+            system("cls");
+}
+
+void InterfazRonda2Jug_N2(int i, char nombre2[],char nombre1[], int Buncos1, int Buncos2, int TotalPartida1, int TotalPartida2){
+
+                cout << "RONDA NUMERO: " << i << endl;
+                cout << "PROXIMO TURNO: " << nombre1<< endl;
+                cout << "---------------------------------------" << endl;
+                cout << "PUNTAJE " << nombre2 <<": "<< TotalPartida2 << " PUNTOS" << endl;
+                cout << "CANTIDAD DE BUNCOS: "<< Buncos2 <<endl;
+                cout << "---------------------------------------" << endl;
+                cout << "PUNTAJE "<<nombre1<<": " << TotalPartida1 << " PUNTOS" << endl;
+                cout << "CANTIDAD DE BUNCOS: "<< Buncos1 <<endl;
+                    anykey();
+                    system("cls");
+}
+
+
+/////////////////////////SIMPLIFICACION DEL MODO 1 Y 2 JUGADORES//////////////////////////////////
 
 
 ///////////////////PUNTAJES/////////////////////////////////////////////////////////////////
