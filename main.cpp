@@ -69,14 +69,14 @@ int main(){
 
                     ponerEnCero(&TotalLanzamientos1,&tirosRealizados1,&tiradaFallida1,&Buncos1,&TotalPartida1);
                     ponerEnCero(&TotalLanzamientos2,&tirosRealizados2,&tiradaFallida2,&Buncos2,&TotalPartida2);
-                    control=true;
-                    control2=false;
+
                     for(i=1;i<=6;i++){
                         LanzamientosPorRonda1=0;
                         TotalRonda1=0;
                         LanzamientosPorRonda2=0;
                         TotalRonda2=0;
-
+                        control=true;
+                        control2=false;
                             while(TotalRonda1<21&&TotalRonda2<21){ //jugador 1
 
                                     while(TotalRonda1<21&&control==true){
