@@ -102,10 +102,25 @@ void cargarAleatorio(int v[], int tam){
 }
 
 void cargarDados(int v[], int tam){
-    int i;
+    int i,y=10;
+        int j;
+    locate(40,9);printf("%c",201);
+    locate(40,13);printf("%c",200);
+    locate(75,9);printf("%c",187);
+    locate(75,13);printf("%c",188);
+        for(j=41;j<=74;j++){
+        locate(j,9);printf("%c",205);
+        locate(j,13);printf("%c",205);
+        }
+        for(j=10;j<=12;j++){
+        locate(40,j);printf("%c",186);
+        locate(75,j);printf("%c",186);
+        }
     for(i=0;i<tam;i++){
-        cout<<"INGRESE EL DADO N_"<<i+1<<" ";cin>>v[i];
+        locate(42,y);cout<<"INGRESE EL DADO N_"<<i+1<<": ";cin>>v[i];
+        y++;
     }
+    system("cls");
 }
 
 void mostrarVector (int v[], int tam){

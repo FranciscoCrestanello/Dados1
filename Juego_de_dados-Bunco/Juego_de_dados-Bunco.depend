@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1606094403 source:c:\users\crest\desktop\trabajo final laboratorio\juego_de_dados-bunco\main.cpp
+1606104623 source:c:\users\crest\desktop\trabajo final laboratorio\juego_de_dados-bunco\main.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -7,7 +7,7 @@
 	"funciones.h"
 	"rlutil.h"
 
-1606096417 c:\users\crest\desktop\trabajo final laboratorio\juego_de_dados-bunco\funciones.h
+1606105393 c:\users\crest\desktop\trabajo final laboratorio\juego_de_dados-bunco\funciones.h
 	"rlutil.h"
 
 1571584339 c:\users\crest\desktop\trabajo final laboratorio\juego_de_dados-bunco\rlutil.h
