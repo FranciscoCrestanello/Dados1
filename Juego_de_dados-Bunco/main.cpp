@@ -19,7 +19,7 @@ int main(){
     char nombre1[10],nombre2[10];
     int TotalLanzamientos1,tirosRealizados1,tiradaFallida1,Buncos1,TotalPartida1,LanzamientosPorRonda1,TotalRonda1;
     int TotalLanzamientos2,tirosRealizados2,tiradaFallida2,Buncos2,TotalPartida2,LanzamientosPorRonda2,TotalRonda2;
-    bool control=true,control2=true;
+    bool control;
 
     while(opcion!=0){
         opcion=EjecutarMenu(opcion);
@@ -71,7 +71,6 @@ int main(){
                     ponerEnCero(&TotalLanzamientos1,&tirosRealizados1,&tiradaFallida1,&Buncos1,&TotalPartida1);
                     ponerEnCero(&TotalLanzamientos2,&tirosRealizados2,&tiradaFallida2,&Buncos2,&TotalPartida2);
                     control=true;
-                    control2=false;
                     for(i=1;i<=6;i++){
                         LanzamientosPorRonda1=0;
                         TotalRonda1=0;
@@ -82,12 +81,12 @@ int main(){
 
                                     while(TotalRonda1<21&&control==true){
 
-                                    /*for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
+                                    for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
                                     cout<<"INGRESE EL DADO N_"<<x+1<<":";       // ->PARA PROBAR SI FUNCIONA EL PROGRAMA
                                     cin>>dados[x];
-                                    }*/
+                                    }
 
-                                        cargarAleatorio(dados,tam);
+                                        //cargarAleatorio(dados,tam);
                                         DibujarDados(dados,tam);
                                         TotalLanzamientos1++;
                                         LanzamientosPorRonda1++;
@@ -112,23 +111,23 @@ int main(){
 
 
 ////////////////////////////TERMINA: INTERFAZ DURANTE EL TURNO DEL PRIMER JUGADOR///////////////////////////
-                                        control2=false;
+
                                     }
                         ////////////////////////EMPIEZA: INTERFAZ ENTRE RONDA Y RONDA ////////////////////////
                                     InterfazRonda2Jug_N1(i,nombre2,nombre1,Buncos1,Buncos2,TotalPartida1,TotalPartida2);
 
                         ////////////////////////TERMINA: INTERFAZ ENTRE RONDA Y RONDA ////////////////////////
                                     control=true;
-                                    if(TotalRonda1<21||control2==false){
+                                    if(TotalRonda1<21){
 
                                         while(TotalRonda2<21&&control==true){ // jugador 2
 
-                                        /*for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
+                                        for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
                                         cout<<"INGRESE EL DADO N_"<<x+1<<":";       // ->PARA PROBAR SI FUNCIONA EL PROGRAMA
                                         cin>>dados[x];
-                                        }*/
+                                        }
 
-                                            cargarAleatorio(dados,tam);
+                                            //cargarAleatorio(dados,tam);
                                             DibujarDados(dados,tam);
                                             TotalLanzamientos2++;
                                             LanzamientosPorRonda2++;
@@ -136,10 +135,10 @@ int main(){
 
                                             if(maximo==0){
                                                 tiradaFallida2++;
+                                                control=false;
                                             }
                                             if(maximo==21){
                                                 Buncos2++;
-                                                control=false;
                                             }
                                             tirosRealizados2++;
                                             TotalRonda2+=maximo;
