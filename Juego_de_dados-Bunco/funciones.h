@@ -45,13 +45,13 @@ int BuscarMasGrande(int puntos[]);              // BUSCA EL VALOR MAXIMO DE LOS 
 
 int NombrePuntaje(int entero);                  // NOMBRA EL PUNTAJE EN LA INTERFAZ DE LOS JUGADORES
 
-void DibujarDados(int v[], int tam);
+void DibujarDados(int v[], int tam);            // DIBUJA LOS DADOS
 
 int Caras(int n);                               // DADO 1
 
 int Caras2(int n);                              // DADO 2
 
-int Caras3(int n);                               // DADO 3
+int Caras3(int n);                              // DADO 3
 
 
 /////////////////////////DEFINICION DE LAS FUNCIONES////////////////////////////////////////
@@ -147,19 +147,66 @@ void ponerEnCero (int *a,int *b,int *c,int *d,int *e){
 }
 
 void PuntuacionMaxima(int selec,char nombre1[],char nombre2[],int Buncos,int Buncos1,int Buncos2,int TotalPartida,int TotalPartida1,int TotalPartida2){
-    cout << "ELIGA EL MODO DE JUEGO QUE DESEA SABER LA PUNTUACION MAXIMA(1 o 2): ";cin>>selec;
+        int j;
+    locate(40,9);printf("%c",201);
+    locate(40,13);printf("%c",200);
+    locate(75,9);printf("%c",187);
+    locate(75,13);printf("%c",188);
+        for(j=41;j<=74;j++){
+        locate(j,9);printf("%c",205);
+        locate(j,13);printf("%c",205);
+        }
+        for(j=10;j<=12;j++){
+        locate(40,j);printf("%c",186);
+        locate(75,j);printf("%c",186);
+        }
+    locate(41,11);cout << "ELIGA EL MODO DE JUEGO(1 o 2): ";cin>>selec;
+    system("cls");
     switch(selec){
-        case 1: cout << "PUNTUACION MODO UN JUGADOR "<<endl;
-                cout << "NOMBRE: " << nombre1 <<endl;
-                cout << "PUNTUACION: " << TotalPartida << endl;
-                cout << "BUNCOS: " << Buncos << endl;
+
+        case 1:
+                locate(38,8);printf("%c",201);
+                locate(38,17);printf("%c",200);
+                locate(82,8);printf("%c",187);
+                locate(82,17);printf("%c",188);
+
+                for(j=39;j<=81;j++){
+                    locate(j,8);printf("%c",205);
+                    locate(j,17);printf("%c",205);
+                }
+                for(j=9;j<=16;j++){
+                    locate(38,j);printf("%c",186);
+                    locate(82,j);printf("%c",186);
+                }
+                locate(47,10);cout << "PUNTUACION MODO UN JUGADOR "<<endl;
+                locate(45,11);cout<<"------------------------------"<<endl;
+                locate(46,12);cout << "NOMBRE: " << nombre1 <<endl;
+                locate(46,13);cout << "PUNTUACION: " << TotalPartida << endl;
+                locate(46,14);cout << "BUNCOS: " << Buncos << endl;
                     anykey();
                     system("cls");
             break;
-        case 2:       if(TotalPartida1>TotalPartida2){
-                            cout<<"NOMBRE: "<<nombre1<<endl;
-                            cout<<"CANTIDAD DE BUNCOS: "<< Buncos1<<endl;
-                            cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida1<<endl;
+        case 2:
+                locate(38,8);printf("%c",201);
+                locate(38,15);printf("%c",200);
+                locate(76,8);printf("%c",187);
+                locate(76,15);printf("%c",188);
+
+                for(j=39;j<=75;j++){
+                    locate(j,8);printf("%c",205);
+                    locate(j,15);printf("%c",205);
+                }
+                for(j=9;j<=14;j++){
+                    locate(38,j);printf("%c",186);
+                    locate(76,j);printf("%c",186);
+                }
+                        if(TotalPartida1>TotalPartida2){
+                            locate(j,15);printf("%c",205);
+                }
+                for(j=9;j<=14;j++){
+                        locate(40,10);cout<<"NOMBRE: "<<nombre1<<endl;
+                        locate(40,11);cout<<"CANTIDAD DE BUNCOS: "<< Buncos1<<endl;
+                        locate(40,12);cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida1<<endl;
                         }
                         if(TotalPartida2>TotalPartida1){
                             cout<<"NOMBRE: "<<nombre2<<endl;
@@ -194,6 +241,8 @@ void PuntuacionMaxima(int selec,char nombre1[],char nombre2[],int Buncos,int Bun
             break;
 
         default: cout << "ERROR DE NUMERO";
+                anykey();
+                system("cls");
             break;
     }
 }

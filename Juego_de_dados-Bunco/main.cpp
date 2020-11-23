@@ -45,25 +45,16 @@ int main(){
                                         TotalRonda+=maximo;
                                         TotalPartida+=maximo;
 
-        //////EMPIEZA: INTERFAZ DURANTE EL TURNO DEL JUGADOR///
-            MostrarBordesTurnoJug();
-            MostrarNombre1Jug(nombre1);
-            InterfazTurno1Jug(i,TotalPartida,Buncos,LanzamientosPorRonda,dados,maximo,TotalRonda);
-
-////////////////////////////TERMINA: INTERFAZ DURANTE EL TURNO DEL JUGADOR///////////////////////////
+                        MostrarBordesTurnoJug();
+                        MostrarNombre1Jug(nombre1);
+                        InterfazTurno1Jug(i,TotalPartida,Buncos,LanzamientosPorRonda,dados,maximo,TotalRonda);
                             }
-////////////////////////////EMPIEZA: INTERFAZ ENTRE RONDA Y RONDA////////////////////////////////////
-
                         InterfazRonda1Jug(i,TotalPartida,Buncos,tiradaFallida,TotalLanzamientos,nombre1);
-
-/////////////////////////////////TERMINA: INTERFAZ ENTRE RONDA Y RONDA/////////////////////////////////
                     }
-                                PuntajeDelJugador=TotalPartida-(tiradaFallida*2);
-///////////////////////////////////EMPIEZA: INTERFAZ FIN DE LA PARTIDA//////////////////////////////////////////
-        InterfazFinPartida1Jug(nombre1,Buncos,tiradaFallida,tirosRealizados,PuntajeDelJugador);
+                        PuntajeDelJugador=TotalPartida-(tiradaFallida*2);
+                        InterfazFinPartida1Jug(nombre1,Buncos,tiradaFallida,tirosRealizados,PuntajeDelJugador);
 
-                                break;
-//////////////////////////////////TERMINA: INTERFAZ DE LA PARTIDA////////////////////////////////////////////
+                    break;
 
             case 2: IngresoNombre2Jugadores(nombre1,nombre2);
 
@@ -79,10 +70,8 @@ int main(){
                         controlPrimerTiro=false;
                             while(TotalRonda1<21&&TotalRonda2<21){
 
-                                    while(TotalRonda1<21&&control==true){ //jugador 1
-
-                                        cargarDados(dados,tam);
-                                        //cargarAleatorio(dados,tam);
+                                    while(TotalRonda1<21&&control==true){
+                                        cargarAleatorio(dados,tam);
                                         DibujarDados(dados,tam);
                                         TotalLanzamientos1++;
                                         LanzamientosPorRonda1++;
@@ -99,26 +88,19 @@ int main(){
                                         TotalRonda1+=maximo;
                                         TotalPartida1+=maximo;
 
-//////////////////////EMPIEZA: INTERFAZ DURANTE EL TURNO DEL PRIMER JUGADOR////////////////////////////
-
-    MostrarBordesTurnoJug();
-    MostrarNombre1Jug(nombre1);
-    InterfazTurno1Jug(i,TotalPartida1,Buncos1,LanzamientosPorRonda1,dados,maximo,TotalRonda1);
-
-////////////////////////////TERMINA: INTERFAZ DURANTE EL TURNO DEL PRIMER JUGADOR///////////////////////////
+                        MostrarBordesTurnoJug();
+                        MostrarNombre1Jug(nombre1);
+                        InterfazTurno1Jug(i,TotalPartida1,Buncos1,LanzamientosPorRonda1,dados,maximo,TotalRonda1);
 
                                     }
-                        ////////////////////////EMPIEZA: INTERFAZ ENTRE RONDA Y RONDA ////////////////////////
-                                    InterfazRonda2Jug_N1(i,nombre2,nombre1,Buncos1,Buncos2,TotalPartida1,TotalPartida2);
+                        InterfazRonda2Jug_N1(i,nombre2,nombre1,Buncos1,Buncos2,TotalPartida1,TotalPartida2);
 
-                        ////////////////////////TERMINA: INTERFAZ ENTRE RONDA Y RONDA ////////////////////////
                                     control=true;
                                     if(TotalRonda1<21||controlPrimerTiro==false){
                                         controlPrimerTiro=true;
-                                        while(TotalRonda2<21&&control==true){ // jugador 2
+                                        while(TotalRonda2<21&&control==true){
 
-                                            cargarDados(dados,tam);
-                                            //cargarAleatorio(dados,tam);
+                                            cargarAleatorio(dados,tam);
                                             DibujarDados(dados,tam);
                                             TotalLanzamientos2++;
                                             LanzamientosPorRonda2++;
@@ -135,23 +117,18 @@ int main(){
                                             TotalRonda2+=maximo;
                                             TotalPartida2+=maximo;
 
-//////////////////////EMPIEZA: INTERFAZ DURANTE EL TURNO DEL SEGUNDO JUGADOR////////////////////////////
+                            MostrarBordesTurnoJug();
+                            MostrarNombre1Jug(nombre2);
+                            InterfazTurno1Jug(i,TotalPartida2,Buncos2,LanzamientosPorRonda2,dados,maximo,TotalRonda2);
 
-    MostrarBordesTurnoJug();
-    MostrarNombre1Jug(nombre2);
-    InterfazTurno1Jug(i,TotalPartida2,Buncos2,LanzamientosPorRonda2,dados,maximo,TotalRonda2);
 
-////////////////////////////TERMINA: INTERFAZ DURANTE EL TURNO DEL SEGUNDO JUGADOR///////////////////////////
 
                                         }
                                     }
                     InterfazRonda2Jug_N2(i,nombre2,nombre1,Buncos1,Buncos2,TotalPartida1,TotalPartida2);
-
                                 control=true;
-
                             }
                     }
-                    ///FIN DE LA PARTIDA///////////
                     Fin_Partida(nombre1,nombre2,TotalPartida1,TotalPartida2,Buncos1,Buncos2);
                     break;
             case 3: PuntuacionMaxima(selec,nombre1,nombre2,Buncos,Buncos1,Buncos2,TotalPartida,TotalPartida1,TotalPartida2);
@@ -179,25 +156,15 @@ int main(){
                                         TotalRonda+=maximo;
                                         TotalPartida+=maximo;
 
-        //////EMPIEZA: INTERFAZ DURANTE EL TURNO DEL JUGADOR///
             MostrarBordesTurnoJug();
             MostrarNombre1Jug(nombre1);
             InterfazTurno1Jug(i,TotalPartida,Buncos,LanzamientosPorRonda,dados,maximo,TotalRonda);
-
-////////////////////////////TERMINA: INTERFAZ DURANTE EL TURNO DEL JUGADOR///////////////////////////
                             }
-////////////////////////////EMPIEZA: INTERFAZ ENTRE RONDA Y RONDA////////////////////////////////////
-
                         InterfazRonda1Jug(i,TotalPartida,Buncos,tiradaFallida,TotalLanzamientos,nombre1);
 
-/////////////////////////////////TERMINA: INTERFAZ ENTRE RONDA Y RONDA/////////////////////////////////
                     }
                                 PuntajeDelJugador=TotalPartida-(tiradaFallida*2);
-///////////////////////////////////EMPIEZA: INTERFAZ FIN DE LA PARTIDA//////////////////////////////////////////
         InterfazFinPartida1Jug(nombre1,Buncos,tiradaFallida,tirosRealizados,PuntajeDelJugador);
-
-                                break;
-//////////////////////////////////TERMINA: INTERFAZ DE LA PARTIDA////////////////////////////////////////////
 
                 break;
 
