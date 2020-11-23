@@ -207,23 +207,27 @@ void PuntuacionMaxima(int selec,char nombre1[],char nombre2[],int Buncos,int Bun
                         locate(40,10);cout<<"NOMBRE: "<<nombre1<<endl;
                         locate(40,11);cout<<"CANTIDAD DE BUNCOS: "<< Buncos1<<endl;
                         locate(40,12);cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida1<<endl;
+                        return;
                         }
                         if(TotalPartida2>TotalPartida1){
                             cout<<"NOMBRE: "<<nombre2<<endl;
                             cout<<"CANTIDAD DE BUNCOS: "<< Buncos2<<endl;
                             cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida2<<endl;
+                            return;
                         }
                         if(TotalPartida2==TotalPartida1){
                             if(Buncos1>Buncos2){
                                 cout<<"NOMBRE: "<<nombre1<<endl;
                                 cout<<"CANTIDAD DE BUNCOS: "<< Buncos1<<endl;
                                 cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida1<<endl;
+                                return;
                             }
                             else{
                                 if(Buncos2>Buncos1){
                                     cout<<"NOMBRE: "<<nombre2<<endl;
                                     cout<<"CANTIDAD DE BUNCOS: "<< Buncos2<<endl;
                                     cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida2<<endl;
+                                    return;
                                 }
                             }
                         }
@@ -235,6 +239,7 @@ void PuntuacionMaxima(int selec,char nombre1[],char nombre2[],int Buncos,int Bun
                             cout<<"NOMBRE: "<<nombre2<<endl;
                             cout<<"CANTIDAD DE BUNCOS: "<< Buncos2<<endl;
                             cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida2<<endl;
+                            return;
                         }
                         anykey();
                         system("cls");

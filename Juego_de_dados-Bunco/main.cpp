@@ -132,6 +132,8 @@ int main(){
                     Fin_Partida(nombre1,nombre2,TotalPartida1,TotalPartida2,Buncos1,Buncos2);
                     break;
             case 3: PuntuacionMaxima(selec,nombre1,nombre2,Buncos,Buncos1,Buncos2,TotalPartida,TotalPartida1,TotalPartida2);
+            anykey();
+            system("cls");
                 break;
 
             case 4: IngresoNombre1Jugador(nombre1);
