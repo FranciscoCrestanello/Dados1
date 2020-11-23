@@ -114,7 +114,7 @@ int main(){
                         ////////////////////////TERMINA: INTERFAZ ENTRE RONDA Y RONDA ////////////////////////
                                     control=true;
                                     if(TotalRonda1<21||controlPrimerTiro==false){
-
+                                        controlPrimerTiro=true;
                                         while(TotalRonda2<21&&control==true){ // jugador 2
 
                                             cargarDados(dados,tam);
@@ -148,6 +148,7 @@ int main(){
                     InterfazRonda2Jug_N2(i,nombre2,nombre1,Buncos1,Buncos2,TotalPartida1,TotalPartida2);
 
                                 control=true;
+
                             }
                     }
                     ///FIN DE LA PARTIDA///////////
