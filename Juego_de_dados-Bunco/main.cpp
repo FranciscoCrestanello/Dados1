@@ -81,11 +81,11 @@ int main(){
 
                                     while(TotalRonda1<21&&control==true){
 
-                                    for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
+                                    /*for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
                                     cout<<"INGRESE EL DADO N_"<<x+1<<":";       // ->PARA PROBAR SI FUNCIONA EL PROGRAMA
                                     cin>>dados[x];
-                                    }
-
+                                    }*/
+                                    cargarDados(dados,tam);
                                         //cargarAleatorio(dados,tam);
                                         DibujarDados(dados,tam);
                                         TotalLanzamientos1++;
@@ -122,10 +122,11 @@ int main(){
 
                                         while(TotalRonda2<21&&control==true){ // jugador 2
 
-                                        for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
+                                        /*for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
                                         cout<<"INGRESE EL DADO N_"<<x+1<<":";       // ->PARA PROBAR SI FUNCIONA EL PROGRAMA
                                         cin>>dados[x];
-                                        }
+                                        }*/
+                                        cargarDados(dados,tam);
 
                                             //cargarAleatorio(dados,tam);
                                             DibujarDados(dados,tam);

@@ -100,6 +100,14 @@ void cargarAleatorio(int v[], int tam){
             v[i]=rand()%(6)+1;
         }
 }
+
+void cargarDados(int v[], int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        cout<<"INGRESE EL DADO N_"<<i+1<<" ";cin>>v[i];
+    }
+}
+
 void mostrarVector (int v[], int tam){
     int i;
     for(i=0;i<tam;i++){
