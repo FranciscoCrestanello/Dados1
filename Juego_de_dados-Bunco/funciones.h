@@ -123,6 +123,58 @@ void ponerEnCero (int *a,int *b,int *c,int *d,int *e){
     *a=*b=*c=*d=*e=0;
 }
 
+void PuntuacionMaxima(int selec,char nombre1[],char nombre2[],int Buncos,int Buncos1,int Buncos2,int TotalPartida,int TotalPartida1,int TotalPartida2){
+    cout << "ELIGA EL MODO DE JUEGO QUE DESEA SABER LA PUNTUACION MAXIMA(1 o 2): ";cin>>selec;
+    switch(selec){
+        case 1: cout << "PUNTUACION MODO UN JUGADOR "<<endl;
+                cout << "NOMBRE: " << nombre1 <<endl;
+                cout << "PUNTUACION: " << TotalPartida << endl;
+                cout << "BUNCOS: " << Buncos << endl;
+                    anykey();
+                    system("cls");
+            break;
+        case 2:       if(TotalPartida1>TotalPartida2){
+                            cout<<"NOMBRE: "<<nombre1<<endl;
+                            cout<<"CANTIDAD DE BUNCOS: "<< Buncos1<<endl;
+                            cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida1<<endl;
+                        }
+                        if(TotalPartida2>TotalPartida1){
+                            cout<<"NOMBRE: "<<nombre2<<endl;
+                            cout<<"CANTIDAD DE BUNCOS: "<< Buncos2<<endl;
+                            cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida2<<endl;
+                        }
+                        if(TotalPartida2==TotalPartida1){
+                            if(Buncos1>Buncos2){
+                                cout<<"NOMBRE: "<<nombre1<<endl;
+                                cout<<"CANTIDAD DE BUNCOS: "<< Buncos1<<endl;
+                                cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida1<<endl;
+                            }
+                            else{
+                                if(Buncos2>Buncos1){
+                                    cout<<"NOMBRE: "<<nombre2<<endl;
+                                    cout<<"CANTIDAD DE BUNCOS: "<< Buncos2<<endl;
+                                    cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida2<<endl;
+                                }
+                            }
+                        }
+                        if(TotalPartida2==TotalPartida1&&Buncos1==Buncos2){
+                            cout<<"NOMBRE: "<<nombre1<<endl;
+                            cout<<"CANTIDAD DE BUNCOS: "<< Buncos1<<endl;
+                            cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida1<<endl;
+                            cout<<"--------------------------------"<<endl;
+                            cout<<"NOMBRE: "<<nombre2<<endl;
+                            cout<<"CANTIDAD DE BUNCOS: "<< Buncos2<<endl;
+                            cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida2<<endl;
+                        }
+                        anykey();
+                        system("cls");
+            break;
+
+        default: cout << "ERROR DE NUMERO";
+            break;
+    }
+}
+
 /////////////////////////FUNCIONES DE ENTADA////////////////////////////////////////////////
 
 
@@ -225,33 +277,117 @@ void IngresoNombre2Jugadores(char nombre1[], char nombre2[]){
 }
 
 void InterfazRonda2Jug_N1(int i, char nombre2[],char nombre1[], int Buncos1, int Buncos2, int TotalPartida1, int TotalPartida2){
+    int j;
+    locate(40,7);printf("%c",201);
+    locate(40,16);printf("%c",200);
+    locate(75,7);printf("%c",187);
+    locate(75,16);printf("%c",188);
+        for(j=41;j<=74;j++){
+        locate(j,7);printf("%c",205);
+        locate(j,16);printf("%c",205);
+        }
+        for(j=8;j<=15;j++){
+        locate(40,j);printf("%c",186);
+        locate(75,j);printf("%c",186);
+        }
 
-        cout << "RONDA NUMERO: " << i << endl;
-        cout << "PROXIMO TURNO: " << nombre2 << endl;
-        cout << "---------------------------------------" << endl;
-        cout << "PUNTAJE " << nombre1 <<": "<< TotalPartida1 << " PUNTOS" << endl;
-        cout << "CANTIDAD DE BUNCOS: "<< Buncos1 <<endl;
-        cout << "---------------------------------------" << endl;
-        cout << "PUNTAJE "<<nombre2<<": " << TotalPartida2 << " PUNTOS" << endl;
-        cout << "CANTIDAD DE BUNCOS: "<< Buncos2 <<endl;
+        locate(47,8);cout << "RONDA NUMERO: " << i << endl;
+        locate(47,9);cout << "PROXIMO TURNO: " << nombre2 << endl;
+        locate(43,10);cout << "------------------------------" << endl;
+        locate(47,11);cout << "PUNTAJE " << nombre1 <<": "<< TotalPartida1 << " PUNTOS" << endl;
+        locate(47,12);cout << "CANTIDAD DE BUNCOS: "<< Buncos1 <<endl;
+        locate(43,13);cout << "------------------------------" << endl;
+        locate(47,14);cout << "PUNTAJE "<<nombre2<<": " << TotalPartida2 << " PUNTOS" << endl;
+        locate(47,15);cout << "CANTIDAD DE BUNCOS: "<< Buncos2 <<endl;
             anykey();
             system("cls");
 }
 
 void InterfazRonda2Jug_N2(int i, char nombre2[],char nombre1[], int Buncos1, int Buncos2, int TotalPartida1, int TotalPartida2){
 
-                cout << "RONDA NUMERO: " << i << endl;
-                cout << "PROXIMO TURNO: " << nombre1<< endl;
-                cout << "---------------------------------------" << endl;
-                cout << "PUNTAJE " << nombre2 <<": "<< TotalPartida2 << " PUNTOS" << endl;
-                cout << "CANTIDAD DE BUNCOS: "<< Buncos2 <<endl;
-                cout << "---------------------------------------" << endl;
-                cout << "PUNTAJE "<<nombre1<<": " << TotalPartida1 << " PUNTOS" << endl;
-                cout << "CANTIDAD DE BUNCOS: "<< Buncos1 <<endl;
+    int j;
+    locate(40,7);printf("%c",201);
+    locate(40,16);printf("%c",200);
+    locate(75,7);printf("%c",187);
+    locate(75,16);printf("%c",188);
+        for(j=41;j<=74;j++){
+        locate(j,7);printf("%c",205);
+        locate(j,16);printf("%c",205);
+        }
+        for(j=8;j<=15;j++){
+        locate(40,j);printf("%c",186);
+        locate(75,j);printf("%c",186);
+        }
+                locate(47,8);cout << "RONDA NUMERO: " << i << endl;
+                locate(47,9);cout << "PROXIMO TURNO: " << nombre1<< endl;
+                locate(43,10);cout << "------------------------------" << endl;
+                locate(47,11);cout << "PUNTAJE " << nombre2 <<": "<< TotalPartida2 << " PUNTOS" << endl;
+                locate(47,12);cout << "CANTIDAD DE BUNCOS: "<< Buncos2 <<endl;
+                locate(43,13);cout << "------------------------------" << endl;
+                locate(47,14);cout << "PUNTAJE "<<nombre1<<": " << TotalPartida1 << " PUNTOS" << endl;
+                locate(47,15);cout << "CANTIDAD DE BUNCOS: "<< Buncos1 <<endl;
                     anykey();
                     system("cls");
 }
 
+void Fin_Partida(char nombre1[], char nombre2[], int TotalPartida1,int TotalPartida2, int Buncos1, int Buncos2){
+
+            int j;
+            locate(40,7);printf("%c",201);
+            locate(40,15);printf("%c",200);
+            locate(75,7);printf("%c",187);
+            locate(75,15);printf("%c",188);
+                for(j=41;j<=74;j++){
+                locate(j,7);printf("%c",205);
+                locate(j,15);printf("%c",205);
+                }
+                for(j=8;j<=14;j++){
+                locate(40,j);printf("%c",186);
+                locate(75,j);printf("%c",186);
+                }
+
+                        if(TotalPartida1>TotalPartida2){
+                            locate(49,9);cout<<"FINAL DE LA PARTIDA"<<endl;
+                            locate(43,10);cout<<"------------------------------"<<endl;
+                            locate(43,11);cout<<"GANADOR: "<<nombre1<<endl;
+                            locate(43,12);cout<<"CANTIDAD DE BUNCOS: "<< Buncos1<<endl;
+                            locate(43,13);cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida1<<endl;
+                        }
+                        if(TotalPartida2>TotalPartida1){
+                            locate(49,9);cout<<"FINAL DE LA PARTIDA"<<endl;
+                            locate(43,10);cout<<"------------------------------"<<endl;
+                            locate(43,11);cout<<"GANADOR: "<<nombre2<<endl;
+                            locate(43,12);cout<<"CANTIDAD DE BUNCOS: "<< Buncos2<<endl;
+                            locate(43,13);cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida2<<endl;
+                        }
+                        if(TotalPartida2==TotalPartida1){
+                            if(Buncos1>Buncos2){
+                                locate(49,9);cout<<"FINAL DE LA PARTIDA"<<endl;
+                                locate(43,10);cout<<"------------------------------"<<endl;
+                                locate(43,11);cout<<"GANADOR: "<<nombre1<<endl;
+                                locate(43,12);cout<<"CANTIDAD DE BUNCOS: "<< Buncos1<<endl;
+                                locate(43,13);cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida1<<endl;
+                            }
+                            else{
+                                if(Buncos2>Buncos1){
+                                    locate(49,9);cout<<"FINAL DE LA PARTIDA"<<endl;
+                                    locate(43,10);cout<<"------------------------------"<<endl;
+                                    locate(43,11); cout<<"GANADOR: "<<nombre2<<endl;
+                                    locate(43,12); cout<<"CANTIDAD DE BUNCOS: "<< Buncos2<<endl;
+                                    locate(43,13);cout<<"PUNTAJE TOTAL ACUMULADO: "<<TotalPartida2<<endl;
+                                }
+                            }
+                        }
+                        if(TotalPartida2==TotalPartida1&&Buncos1==Buncos2){
+                            locate(49,9);cout<<"FINAL DE LA PARTIDA"<<endl;
+                            locate(43,10);cout<<"------------------------------"<<endl;
+                            locate(43,11);cout<<"EMPATE"<<endl;
+                            locate(43,12);cout<<"AMBOS JUGADORES TIENEN LA MISMA"<<endl;
+                            locate(43,13);cout<<"CANTIDAD DE PUNTOS Y BUNCOS"<<endl;
+                        }
+                            anykey();
+                            system("cls");
+}
 
 /////////////////////////SIMPLIFICACION DEL MODO 1 Y 2 JUGADORES//////////////////////////////////
 

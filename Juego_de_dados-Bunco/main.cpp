@@ -12,7 +12,7 @@ using namespace rlutil;
 
 int main(){
     const int tam=3;
-    int opcion=-1,i,x;
+    int opcion=-1,selec,i,x;
     int dados[3],puntos[5],maximo;
     int tiradaFallida,TotalPartida,TotalRonda,PuntajeDelJugador;
     int Buncos,tirosRealizados,TotalLanzamientos,LanzamientosPorRonda;
@@ -82,12 +82,12 @@ int main(){
 
                                     while(TotalRonda1<21&&control==true){
 
-                                    for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
+                                    /*for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
                                     cout<<"INGRESE EL DADO N_"<<x+1<<":";       // ->PARA PROBAR SI FUNCIONA EL PROGRAMA
                                     cin>>dados[x];
-                                    }
+                                    }*/
 
-                                        //cargarAleatorio(dados,tam);
+                                        cargarAleatorio(dados,tam);
                                         DibujarDados(dados,tam);
                                         TotalLanzamientos1++;
                                         LanzamientosPorRonda1++;
@@ -123,12 +123,12 @@ int main(){
 
                                         while(TotalRonda2<21&&control==true){ // jugador 2
 
-                                        for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
+                                        /*for(x=0;x<=2;x++){                              // CON ESTE FOR INGRESO LOS NUMEROS->
                                         cout<<"INGRESE EL DADO N_"<<x+1<<":";       // ->PARA PROBAR SI FUNCIONA EL PROGRAMA
                                         cin>>dados[x];
-                                        }
+                                        }*/
 
-                                            //cargarAleatorio(dados,tam);
+                                            cargarAleatorio(dados,tam);
                                             DibujarDados(dados,tam);
                                             TotalLanzamientos2++;
                                             LanzamientosPorRonda2++;
@@ -136,10 +136,10 @@ int main(){
 
                                             if(maximo==0){
                                                 tiradaFallida2++;
-                                                control=false;
                                             }
                                             if(maximo==21){
                                                 Buncos2++;
+                                                control=false;
                                             }
                                             tirosRealizados2++;
                                             TotalRonda2+=maximo;
@@ -163,7 +163,8 @@ int main(){
 
                     }
                     ///FIN DE LA PARTIDA///////////
-                        if(TotalPartida1>TotalPartida2){
+                    Fin_Partida(nombre1,nombre2,TotalPartida1,TotalPartida2,Buncos1,Buncos2);
+                        /*if(TotalPartida1>TotalPartida2){
                             cout<<"FINAL DE LA PARTIDA"<<endl;
                             cout<<"------------------------------------"<<endl;
                             cout<<"GANADOR: "<<nombre1<<endl;
@@ -203,10 +204,12 @@ int main(){
                             cout<<"CANTIDAD DE PUNTOS Y BUNCOS"<<endl;
                         }
                             anykey();
-                            system("cls");
+                            system("cls");*/
                     break;
+            case 3: PuntuacionMaxima(selec,nombre1,nombre2,Buncos,Buncos1,Buncos2,TotalPartida,TotalPartida1,TotalPartida2);
+                break;
 
-            case 0: cout << "FIN DEL JUEGO" <<endl;
+            case 0: cout << "FIN DEL JUEGO" << endl;
                     return 0;
                     break;
 
